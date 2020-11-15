@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .con,ul{
+        margin: 0;
+        padding: 0;
+        width: 400px;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .con>div,li{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        flex: none;
+    }
+</style>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="con">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+<script>
+    function test(){
+        var num=0;
+        console.log(num)
+        return ()=>{
+            console.log('被返回函数打印'+num)
+        }
+    }
+
+    function d(){
+        let num=1;
+        var c=test();
+        console.log(c)
+        c();
+    }
+    d();
+</script>
+</html>
