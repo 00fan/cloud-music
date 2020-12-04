@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 import sprite_icon from '../../../../../../assets/img/sprite_icon.png'
+
+import sprite_cover from '../../../../../../assets/img/sprite_cover.png'
 export const HotRecommendSwrapper=styled.div`
     .hot-recommend{
         display:flex;
@@ -16,10 +18,17 @@ export const HotRecommendSwrapper=styled.div`
             height: 204px;
             padding-left: 42px;
             position: relative;
-            img{
-                width:140px;
-                height:140px;
+            .bg{
+                display:inline-block;
+                background:url(${sprite_cover}) no-repeat;
+                img{
+                    width:140px;
+                    height:140px;
+                    position:relative;
+                    z-index:-1;
+                }
             }
+            
             
             .a-hover {
                 :hover{

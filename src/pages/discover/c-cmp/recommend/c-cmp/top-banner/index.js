@@ -16,7 +16,6 @@ function TopBanner() {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log('topBannderEffect')
         dispatch(getTopBannersAction())
     }, [dispatch])
 

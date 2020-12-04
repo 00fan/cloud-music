@@ -13,4 +13,8 @@ a{
     width: 980px;
     margin: 0 auto;
 }
+.player{
+    position: fixed;
+    bottom: 0;
+}
 

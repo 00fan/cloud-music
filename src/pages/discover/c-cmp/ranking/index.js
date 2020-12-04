@@ -1,18 +1,25 @@
-import { memo, useEffect } from "react"
+import { memo, useEffect,useState } from "react"
 
 import { RankWrapper } from './style'
-import { getTopListAction, getToplistCategoryAction } from './store/actionCreators'
 
+import {getToplistCategoryAction} from './store/actionCreators'
 import Category from './c-cmp/category/index'
-function Ranking() {
-    
+import Detail from './c-cmp/detail/index'
+import { useSelector,useDispatch } from "react-redux"
+function Ranking(props) {
+    const dispatch=useDispatch();
+    useEffect(() => {
+        dispatch(getToplistCategoryAction())
+    }, [dispatch])
     return (
         <RankWrapper>
             <div className='wrap-v2 content'>
                 <div className='left'>
-                    <Category></Category>
+                    <Category history={props.history}></Category>
                 </div>
-                <div className='right'></div>
+                <div className='right'>
+                    <Detail id={props.location.search.slice(props.location.search.indexOf('=')+1)}></Detail>
+                </div>
             </div>
         </RankWrapper>
     )

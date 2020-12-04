@@ -10,13 +10,19 @@ import store from './store/index'
 
 import AppFooter from './components/app-footer'
 import AppHeader from './components/app-header'
+import ToTop from './components/to-top'
+import Player from './pages/song/c-cmp/player-app/index'
 function App(props) {
     return (
         <Provider store={store}>
             <HashRouter>
+                <ToTop></ToTop>
                 <AppHeader></AppHeader>
                 {renderRoutes(routes)}
+                <Player></Player>
+                
                 <AppFooter></AppFooter>
+                <div style={{height:'60px'}}></div>
             </HashRouter>
         </Provider>
     )

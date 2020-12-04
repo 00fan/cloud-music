@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux-immutable'
 
 import discovrReducer from '../pages/discover/store/reducer'
-// import friendReducer from '../pages/friend/store/reducer'
+import songReducer from '../pages/song/store/index'
 
 const reducer=combineReducers({
         discover:discovrReducer,
-        // friend:friendReducer
+        song:songReducer
 })
 
 export default reducer;

@@ -1,6 +1,5 @@
 import request from '../request'
 export function getTopBanners(){
-    console.log('请求getTopBanners')
     return request({
         url:'/banner',
     })
@@ -21,7 +20,6 @@ export function getHotRecommend(limit){
 }
 
 export function getNewDisc({limit,offset,area,type,year,month}){
-    console.log(limit)
     return request({
         url:'/top/album',
         method:'GET',

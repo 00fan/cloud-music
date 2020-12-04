@@ -3,6 +3,7 @@ import Discover from '../pages/discover'
 import Friend from '../pages/friend'
 import Mine from '../pages/mine'
 import Player from '../pages/player'
+import Song from '../pages/song/index'
 
 import Recommend from  '../pages/discover/c-cmp/recommend'
 import Singer from  '../pages/discover/c-cmp/singer'
@@ -10,6 +11,7 @@ import Ranking from  '../pages/discover/c-cmp/ranking'
 import Radio from  '../pages/discover/c-cmp/radio'
 import NewDisc from '../pages/discover/c-cmp/new-disc'
 import PlayList from '../pages/discover/c-cmp/playlist'
+
 const routes = [
     {
         path: '/',
@@ -70,6 +72,10 @@ const routes = [
         path: '/mine',
         exact: true,
         component: Mine
+    },
+    {
+        path:'/song',
+        component:Song
     }
 ]
 export default routes;

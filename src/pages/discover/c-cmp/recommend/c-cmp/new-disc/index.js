@@ -30,7 +30,7 @@ function NewDisc() {
                                     newDisc.slice(item*5,item*5+5).map((iten,index)=>{
                                         return(
                                             <div key={iten.id} className='carousel-page-item'>
-                                                <img src={iten.picUrl}></img>
+                                                <img src={iten.picUrl+'?param=120y120'}></img>
                                                 <a>{iten.name}</a>
                                                 <a>{iten.artist.name}</a>
                                             </div>

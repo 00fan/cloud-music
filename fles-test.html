@@ -23,6 +23,45 @@
         background-color: aqua;
         flex: none;
     }
+    .float-box{
+        width: 200px;
+        height: 200px;
+        outline: aqua 1px solid;
+    }
+    .float-left{
+        width: 100px;
+        height: 100px;
+        float: left;
+        background-color: brown;
+    }
+    .float-right{
+        width: 100px;
+        height: 100px;
+        float: right;
+        background-color: burlywood;
+    }
+    .in{
+        width: 230px;
+        height: 32px;
+    }
+    .in>span{
+        display:inline-block;
+                            width:35px;
+                            height:32px;
+                            line-height:32px;
+                            text-align:center;
+                            vertical-align: super;
+    }
+    .in>a{
+        width:180px;
+                            height:32px;
+                            line-height:32px;
+                            font-size:12px;
+                            display:inline-block;
+                            text-overflow:ellipsis;
+                            white-space:nowrap;
+                            overflow:hidden;
+    }
 </style>
 <body>
     <ul>
@@ -44,6 +83,18 @@
         <div></div>
         <div></div>
         <div></div>
+    </div>
+    <div class="float-box">
+        <div class="float-left">
+            <p>adsccccccccccccccccccccccccccsddddddddddddddddddddddS</p>
+        </div>
+        <div class="float-right">
+            <p>asdddddddddddddddd</p>
+        </div>
+    </div>
+    <div class="in">
+        <span>azzzzzzzzzzz</span>
+        <a>asdasdasd</a>
     </div>
 </body>
 <script>

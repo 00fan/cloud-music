@@ -1,17 +1,13 @@
-import { memo, useEffect, useReducer } from 'react'
+import { memo } from 'react'
 import { CategoryWrapper } from './style'
-import { getTopListAction, getToplistCategoryAction } from '../../store/actionCreators'
-import { useDispatch, useSelector } from 'react-redux'
-function Category() {
-    const dispatch = useDispatch()
+import { shallowEqual,useSelector } from 'react-redux'
+function Category(props) {
     const { topListCategory } = useSelector(state => {
         return {
             topListCategory: state.getIn(['discover', 'ranking', 'topListCategory'])
         }
-    })
-    useEffect(() => {
-        dispatch(getToplistCategoryAction())
-    }, [dispatch])
+    },shallowEqual)
+    
     return (
         <CategoryWrapper>
             <div className='yun'>
@@ -20,9 +16,9 @@ function Category() {
             {
                 topListCategory.slice(0,4).map((item, index) => {
                     return (
-                        <div key={item.name} className='category-item'>
+                        <div key={item.name} className='category-item' onClick={()=>{props.history.push({search:'?id='+item.id})}}>
                             <div className='img-div'>
-                                <img src={item.coverImgUrl}></img>
+                                <img alt='记载中' src={item.coverImgUrl+'?param=120y120'}></img>
                             </div>
                             <p className='name'>{item.name} </p>
                             <p className='up'>{item.updateFrequency}</p>
@@ -37,9 +33,9 @@ function Category() {
             {
                 topListCategory.slice(4,topListCategory.length).map((item, index) => {
                     return (
-                        <div key={item.name} className='category-item'>
+                        <div key={item.name} className='category-item' onClick={()=>{props.history.push({search:'?id='+item.id}) }}>
                             <div className='img-div'>
-                                <img src={item.coverImgUrl}></img>
+                                <img  alt='记载中' src={item.coverImgUrl}></img>
                             </div>
                             <p className='name'>{item.name} </p>
                             <p className='up'>{item.updateFrequency}</p>

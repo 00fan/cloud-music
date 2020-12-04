@@ -1,4 +1,5 @@
 import {getTopBanners,getHotRecommendTitle,getHotRecommend,getNewDisc} from '../../../../../services/discover/recommend'
+import {getToplist} from '../../../../../services/discover/topList'
 import * as constantType from './constant'
 const changeTopBannerAction=(res)=>{
     return {
@@ -25,6 +26,13 @@ const changeNewDiscAction=(res)=>{
         newDisc:res
     }
 }
+const pushRecommendTopListAcyion=(res)=>{
+    return {
+        type:constantType.PUSH_REACOMMEND_TOP_LIST,
+        recommendTopList:res
+    }
+}
+
 
 //异步发送网络请求
 export const getTopBannersAction=()=>{
@@ -55,6 +63,14 @@ export const getNewDiscAction=(config)=>{
     return (dispatch,getState)=>{
         getNewDisc(config).then(res=>{
             dispatch(changeNewDiscAction(res.data.monthData))
+        })
+    }
+}
+
+export const getRecommendTopListAciton=(id)=>{
+    return dispatch=>{
+        getToplist(id).then(res=>{
+            dispatch(pushRecommendTopListAcyion(res.data.playlist));
         })
     }
 }
