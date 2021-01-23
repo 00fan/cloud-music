@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo,Suspense } from 'react'
 
 import { HashRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
@@ -18,11 +18,15 @@ function App(props) {
             <HashRouter>
                 <ToTop></ToTop>
                 <AppHeader></AppHeader>
-                {renderRoutes(routes)}
-                <Player></Player>
+                <Suspense fallback='loading'>
+                    {/* 路由懒加载需要用到Suspense */}
+                    {renderRoutes(routes)}
+                </Suspense>
                 
+                <Player></Player>
+
                 <AppFooter></AppFooter>
-                <div style={{height:'60px'}}></div>
+                <div style={{ height: '60px' }}></div>
             </HashRouter>
         </Provider>
     )

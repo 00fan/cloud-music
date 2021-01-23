@@ -1,17 +1,32 @@
 import { Redirect } from 'react-router-dom'
-import Discover from '../pages/discover'
-import Friend from '../pages/friend'
-import Mine from '../pages/mine'
-import Player from '../pages/player'
-import Song from '../pages/song/index'
+import React from 'react'
 
-import Recommend from  '../pages/discover/c-cmp/recommend'
-import Singer from  '../pages/discover/c-cmp/singer'
-import Ranking from  '../pages/discover/c-cmp/ranking'
-import Radio from  '../pages/discover/c-cmp/radio'
-import NewDisc from '../pages/discover/c-cmp/new-disc'
-import PlayList from '../pages/discover/c-cmp/playlist'
+// import Discover from '../pages/discover'
+// import Friend from '../pages/friend'
+// import Mine from '../pages/mine'
+// import Player from '../pages/player'
+// import Song from '../pages/song/index'
 
+// import Recommend from  '../pages/discover/c-cmp/recommend'
+// import Singer from  '../pages/discover/c-cmp/singer'
+// import Ranking from  '../pages/discover/c-cmp/ranking'
+// import Radio from  '../pages/discover/c-cmp/radio'
+// import NewDisc from '../pages/discover/c-cmp/new-disc'
+
+
+const Discover=React.lazy(()=>(import('../pages/discover')))
+const Friend=React.lazy(()=>import('../pages/friend'))
+const Mine=React.lazy(()=>import('../pages/mine'))
+const Player=React.lazy(()=>import('../pages/player'))
+const Song=React.lazy(()=>import('../pages/song/index'))
+
+
+const Recommend=React.lazy(()=>import('../pages/discover/c-cmp/recommend'))
+const Singer=React.lazy(()=>import('../pages/discover/c-cmp/singer'))
+const Ranking=React.lazy(()=>import('../pages/discover/c-cmp/ranking'))
+const Radio=React.lazy(()=>import('../pages/discover/c-cmp/radio'))
+const NewDisc=React.lazy(()=>import('../pages/discover/c-cmp/new-disc'))
+const PlayList=React.lazy(()=>import('../pages/discover/c-cmp/playlist'))
 const routes = [
     {
         path: '/',

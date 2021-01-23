@@ -13,6 +13,6 @@ export default function (lyric) {
             lyricObj[time] = content
         }
 
-    });console.log(lyricObj)
+    });
     return lyricObj;
 }

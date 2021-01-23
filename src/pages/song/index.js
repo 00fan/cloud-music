@@ -16,8 +16,7 @@ function Song(props){
         <SongWrapper>
             {
                 lyric&&Object.keys(lyricFormat(lyric)).map((key)=>{
-                    console.log(key)
-                    return <div>{lyricFormat(lyric)[key]||'-------'}</div>
+                    return <div key={key}>{lyricFormat(lyric)[key]||'-------'}</div>
                 })
             }
         </SongWrapper>

@@ -17,7 +17,7 @@ export const getCurrentSongDetail=(ids)=>{
     })
 }
 
-export const getDisplaySongLyric=(id)=>{
+export const getSongLyric=(id)=>{
     return request({
         url:'/lyric',
         params:{
