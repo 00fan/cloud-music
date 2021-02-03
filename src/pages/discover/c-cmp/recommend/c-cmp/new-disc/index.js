@@ -15,22 +15,27 @@ function NewDisc() {
         dispatch(getNewDiscAction({ limit: 10 }))
     }, [dispatch])
 
-    const swiperRef=useRef()
-    return (
+    const swiperRef = useRef()
+
+    if (newDisc) {
+        return (
+            <></>
+        )
+    } else {
         <NewDiscWrapper>
             <NewDiscHeader title='新碟上架'></NewDiscHeader>
 
             <Carousel className='swipper' dots={false} ref={swiperRef}>
 
-                { 
-                    [0,1].map((item)=>{
-                        return(
+                {
+                    [0, 1].map((item) => {
+                        return (
                             <div key={item} className='carousel-page'>
                                 {
-                                    newDisc.slice(item*5,item*5+5).map((iten,index)=>{
-                                        return(
+                                    newDisc.slice(item * 5, item * 5 + 5).map((iten, index) => {
+                                        return (
                                             <div key={iten.id} className='carousel-page-item'>
-                                                <img src={iten.picUrl+'?param=120y120'}></img>
+                                                <img src={iten.picUrl + '?param=120y120'}></img>
                                                 <a>{iten.name}</a>
                                                 <a>{iten.artist.name}</a>
                                             </div>
@@ -42,9 +47,11 @@ function NewDisc() {
                     })
                 }
             </Carousel>
-            <div className='arrow-left' onClick={e=>{swiperRef.current.prev()}}></div>
-            <div className='arrow-right' onClick={e=>{swiperRef.current.next()}}></div>
+            <div className='arrow-left' onClick={e => { swiperRef.current.prev() }}></div>
+            <div className='arrow-right' onClick={e => { swiperRef.current.next() }}></div>
         </NewDiscWrapper>
-    )
+    }
+
+
 }
 export default memo(NewDisc)

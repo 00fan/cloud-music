@@ -47,12 +47,14 @@ function Player() {
 
     }
     const playAutoEnd = () => {
+        setIsPlaying(false)
         if (playMode === 2) {
             audioRef.current.currentTime = 0;
             audioRef.current.play()
             setIsPlaying(true)
         } else {
             dispatch(changeCurrentPlayIndexAction('next'))
+           
         }
 
     }
