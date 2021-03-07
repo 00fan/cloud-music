@@ -15,7 +15,27 @@
 > 1. 各种榜单的切换
 
 ##项目规范：
+> 项目全部使用函数式组件，并且全面使用hook
+> + 函数式组件全部用memo包裹，避免不必要的渲染
+> + 内部状态使用useState
+
+>css采用all in js 思想
+> + 局部样式采用styled-component
+> + 全局采用普通css
+
+> 状态管理：
+> + 内部状态使用useState
+> + 业务数据全放在redux中管理
+
+> redux
+> + redux结合immutableJS
+> + 每个模块有自己独立的reducer,通过combineReducer合并
+> + 网络请求放在actionCreatoes中，redux-thunk
+> + 不再使用connect,直接采取redux hooks
+
 > 网络请求采用axios
 > + 对axios进行二次封装；
 > +  所有的模块请求放到一个请求文件种单独管理；
+
+> 项目使用AntDesign
 
